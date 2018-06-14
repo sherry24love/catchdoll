@@ -1,0 +1,23 @@
+{
+    "name": "sherrycin/alipay",
+    "description": "阿里支付的基础sdk",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "sherry24love",
+            "email": "sherry24love@163.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+    	"php":">=5.5.0" ,
+    	"pimple/pimple": "^3.0"
+    } ,
+    "autoload": {
+        "psr-4": {
+            "EasyAlipay\\": "src/"
+        },
+        "files": [
+        ]
+    }
+}

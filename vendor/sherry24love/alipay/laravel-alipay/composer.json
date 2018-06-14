@@ -1,0 +1,30 @@
+{
+    "name": "sherrycin/laravel-alipay",
+    "description": "支付宝应用于Laravel框架",
+    "authors": [
+        {
+            "name": "sherry24love",
+            "email": "sherry24love@163.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Sherrycin\\LaravelAlipay\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Sherrycin\\LaravelAlipay\\ServiceProvider"
+            ],
+            "aliases": {
+                "EasyAlipay": "Sherrycin\\LaravelAlipay\\Facade"
+            }
+        }
+    }
+    
+}

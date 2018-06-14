@@ -1,0 +1,34 @@
+{
+    "name": "sherrycin/laravel-cms",
+    "description": "laravel cms , depend on laravel-admin",
+    "keywords": ["cms", "laravel"],
+    "license": "MIT",
+    "type": "library",
+    "require": {
+    	"php": ">=7.0.1",
+        "laravel/framework": "5.5.*",
+        "encore/laravel-admin": "1.5.*"
+    },
+    "authors": [
+        {
+            "name": "sherry24love",
+            "email": "sherry24love@163.com"
+        }
+    ] ,
+    "autoload": {
+        "psr-4": {
+            "Sherrycin\\Cms\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Sherrycin\\Cms\\Providers\\CmsServiceProvider"
+            ],
+            "aliases": {
+                "Cms": "Sherrycin\\Cms\\Facades\\Cms"
+            }
+
+        }
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "name": "sherrycin/catchdoll",
+    "type": "library",
+    "require": {
+    	"php": ">=7.0.1",
+        "laravel/framework": "5.5.*",
+        "encore/laravel-admin": "1.5.*"
+    },
+    "authors": [
+        {
+            "name": "sherry",
+            "email": "sherry24love@163.com"
+        }
+    ],
+    "minimum-stability": "dev" ,
+    "autoload": {
+        "psr-4": {
+            "Sherrycin\\Catchdoll\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Sherrycin\\Catchdoll\\Providers\\CatchdollServiceProvider"
+            ],
+            "aliases": {
+                "Catchdoll": "Sherrycin\\Catchdoll\\Facades\\Catchdoll"
+            }
+
+        }
+    }
+}

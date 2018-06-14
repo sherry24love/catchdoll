@@ -1,0 +1,33 @@
+{
+    "name": "sherrycin/mall",
+    "description": "simple mall",
+    "type": "project",
+    "require": {
+    	"php": ">=7.0.1",
+        "laravel/framework": "5.5.*",
+        "encore/laravel-admin": "1.5.*"
+    },
+    "authors": [
+        {
+            "name": "sherry",
+            "email": "sherry24love@163.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Sherrycin\\Mall\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Sherrycin\\Mall\\Providers\\MallServiceProvider"
+            ],
+            "aliases": {
+                "Mall": "Sherrycin\\Mall\\Facades\\Mall"
+            }
+
+        }
+    }
+}
