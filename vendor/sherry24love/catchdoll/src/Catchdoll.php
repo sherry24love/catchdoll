@@ -64,6 +64,7 @@ class Catchdoll {
 			 * 资讯分类管理 平台
 			 */
 			$router->get('catchdoll/map' , 'CatchdollApi@map') ;
+			$router->get('catchdoll/mine' , 'CatchdollApi@mine');
 			$router->post('catchdoll/upload' , 'CatchdollApi@upload') ;
 			$router->post('catchdoll/{id}/favor' , 'CatchdollApi@favor');
 			$router->resource('catchdoll', 'CatchdollApi' , [

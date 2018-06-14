@@ -18,7 +18,7 @@ class CatchdollApi extends ApiController {
 	public function __construct() {
 	
 		$this->middleware('auth:api')->only([
-				'store' , 'favor'
+				'store' , 'favor' , 'mine'
 		]);
 	}
 	/**
@@ -47,6 +47,24 @@ class CatchdollApi extends ApiController {
 				'data' => $data
 		]);
 	}
+
+    /**
+     * @param Request $request
+     * 我提交的吸烟区
+     */
+	public function mine( Request $request ) {
+	    $user = auth()->guard('api')->user();
+        $query = Machine::where('creator_id' , $user->id );
+        $query = $query->orderBy('id' , 'desc' );
+        $lat = $request->input('lat' , 0 ) ;
+        $lon = $request->input('lon' , 0 );
+        $query->select(['id' , 'cover' , 'no' , 'address' , 'status' , 'landmark' , 'created_at' , 'score' , 'lat' , 'lon' , \DB::raw("round(6378.138*2*asin(sqrt(pow(sin(($lat*pi()/180-lat*pi()/180)/2),2)+cos($lat*pi()/180)*cos(lat*pi()/180)* pow(sin(($lon*pi()/180-lon*pi()/180)/2),2)))*1000) as distance") ]);
+        $data = $query->paginate( 10 ) ;
+        return response()->json([
+            'errcode' => 0 ,
+            'data' => $data
+        ]);
+    }
 
     /**
      * 地图查看
