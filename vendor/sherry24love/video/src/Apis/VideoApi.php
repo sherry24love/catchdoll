@@ -41,6 +41,7 @@ class VideoApi extends ApiController
             $query = $query->where('user_id' , $user->id );
         }
         $list = $query->paginate( 10 );
+
         $video = $this->transform( $list , VideoTransformer::class , [] , [] , 'id' );
         return response()->json( [
             'errcode' => 0 ,
@@ -70,6 +71,8 @@ class VideoApi extends ApiController
         $desc = $request->input('desc' , '' ) ;
         $url = $request->input('url');
         $size = $request->input('size' , 0 ) ;
+        $width = $request->input('width') ;
+        $height = $request->input('height' ) ;
         $video = Video::create([
             'user_id' => $user->id ,
             'url' => $url ,
@@ -77,6 +80,8 @@ class VideoApi extends ApiController
             'desc' => $desc ,
             'status' => 1 ,
             'size' => $size ,
+            'width' => $width ,
+            'height' => $height ,
         ]);
         if( $video ) {
             return response()->json([

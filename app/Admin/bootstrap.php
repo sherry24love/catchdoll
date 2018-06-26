@@ -32,3 +32,5 @@ Encore\Admin\Form::forget(['map', 'editor']);
 //注册新的表单插件
 Encore\Admin\Form::extend('bmap', BMap::class);
 Encore\Admin\Form::extend('ueditor', Ueditor::class);
+
+\Encore\Admin\Grid\Column::extend('map' , \App\Admin\Extensions\Grid\Map::class );

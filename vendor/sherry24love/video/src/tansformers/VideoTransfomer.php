@@ -25,7 +25,8 @@ class VideoTransformer extends Transformer {
             'url' => data_get( $data , 'url' ) ,
             'cover' => data_get( $data , 'cover' ) . '?vframe%2fjpg%2foffset%2f7' ,
             'title' => data_get( $data , 'title' ) ,
-            'user' => data_get( $data , 'user' )
+            'user' => data_get( $data , 'user' ) ,
+            'created_at' => (string) data_get( $data , 'created_at' )
         ] ;
         return $list;
     }

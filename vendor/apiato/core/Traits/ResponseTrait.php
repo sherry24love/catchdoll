@@ -40,7 +40,6 @@ trait ResponseTrait
     ) {
         // create instance of the transformer
         $transformer = new $transformerName;
-
         // append the includes from the transform() to the defaultIncludes
         $includes = array_unique(array_merge($transformer->getDefaultIncludes(), $includes));
 
@@ -69,7 +68,6 @@ trait ResponseTrait
                 $resourceKey = $obj->getResourceKey();
             }
         }
-
         $fractal = Fractal::create($data, $transformer)->withResourceName($resourceKey)->addMeta($this->metaData);
         // check if the user wants to include additional relationships
         if ($requestIncludes = Request::get('include')) {

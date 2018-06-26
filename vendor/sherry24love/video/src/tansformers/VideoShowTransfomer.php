@@ -24,6 +24,8 @@ class VideoShowTransformer extends Transformer {
             'id' => data_get( $data , 'id') ,
             'url' => "https://" . data_get( $data , 'url' ) ,
             'title' => data_get( $data , 'title' ) ,
+            'height' => data_get( $data , 'height' ) ,
+            'width' => data_get( $data , 'width' ) ,
             'user' => data_get( $data , 'user' ) ,
             'collect_num' => data_get( $data , 'collect_count' , 0 ) ,
             'view_num' => data_get( $data , 'viewed', 0 ) ,

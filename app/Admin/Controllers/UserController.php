@@ -76,7 +76,7 @@ class UserController extends Controller
             $grid->id('ID')->sortable();
             $grid->username('用户名');
 			$grid->mobile('手机号码') ;
-			$grid->nickname('昵称');
+			$grid->nickname('昵称')->map();
 			$grid->avatar('头像')->image();
 			$grid->level('等级')->select( config('global.user_level' ) );
 			$grid->disableExport();
