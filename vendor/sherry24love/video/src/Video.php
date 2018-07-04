@@ -75,6 +75,7 @@ class Video {
                     'create' => 'video.video.api.create' ,
                     'store' => 'video.video.api.store' ,
                     'edit' => 'video.video.api.edit' ,
+                    'show' => 'video.video.api.show' ,
                     'update' => 'video.video.api.update' ,
                     'destroy' => 'video.video.api.delete' ,
                 ]

@@ -24,9 +24,11 @@ class VideoApi extends ApiController
     {
 
         $this->middleware('auth:api')->only([
-            'store' , 'show'
+            'store'
         ]);
     }
+
+
 
 
     /**
@@ -34,7 +36,17 @@ class VideoApi extends ApiController
      */
     public function index( Request $request )
     {
-        $query = Video::with('user')->where('status' , 1 )->orderBy('sort' , 'asc' )->orderBy('id' , 'desc' );
+        $query = Video::with('user')->where('status' , 1 );
+        $order = $request->input('order');
+        if( $order ) {
+            if( 'new' ) {
+                $query = $query->orderBy('id' , 'desc' );
+            }
+            if( 'hot' ) {
+                $query = $query->orderBy('viewed' , 'desc' );
+            }
+        }
+        $query = $query->orderBy('sort' , 'asc' )->orderBy('id' , 'desc' );
         $myself = $request->input('myself' ,  0 );
         if( $myself ) {
             $user = auth()->guard('api')->user();
