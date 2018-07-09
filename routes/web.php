@@ -15,4 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('videos' , 'UserController@index');
+Route::get('demo' , 'VideosController@index');

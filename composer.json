@@ -9,6 +9,7 @@
         "dto/dto": "^3.2",
         "encore/laravel-admin": "^1.5",
         "hashids/hashids": "^3.0",
+        "hightman/xunsearch": "^1.4",
         "laravel-admin-ext/backup": "^1.0",
         "laravel-admin-ext/config": "^1.0",
         "laravel-admin-ext/helpers": "^1.0",
@@ -38,7 +39,7 @@
         ],
         "psr-4": {
             "App\\": "app/" ,
-            "Sherrycin\\" : "vendor/sherry24love" ,
+            "Sherrycin\\" : "sherry24love/" ,
             "Apiato\\" : "vendor/apiato" 
         }
     },
