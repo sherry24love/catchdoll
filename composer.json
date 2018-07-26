@@ -20,6 +20,7 @@
         "laravel/tinker": "~1.0",
         "league/fractal": "^0.17.0",
         "optimus/heimdal": "^1.5",
+        "overtrue/laravel-pinyin": "~3.0",
         "overtrue/laravel-wechat": "~4.0",
         "spatie/laravel-fractal": "^5.3",
         "stevenyangecho/laravel-u-editor": "^1.4",
