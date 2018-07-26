@@ -36,7 +36,8 @@ class CatchdollController extends Controller {
 			$grid->model()->orderBy('id' , 'desc');
 			$grid->id('ID')->sortable();
 			$grid->landmark('地标名称');
-			$grid->no( trans('catchdoll.no') )->limit( 30 );
+			//$grid->no( trans('catchdoll.no') )->limit( 30 );
+			$grid->merchant('商家名称')->limit( 30 );
 			
 			/**
 			$grid->column ( 'subdistrict.name', '街道' )->limit ( 30 )->display ( function ($v) {
@@ -44,8 +45,8 @@ class CatchdollController extends Controller {
 			} );
 			**/
 			$grid->cover ( trans('catchdoll.cover' ) )->image ();
-			$grid->lat ( trans('catchdoll.lat')  );
-			$grid->lon ( trans('catchdoll.lon' ) );
+			//$grid->lat ( trans('catchdoll.lat')  );
+			//$grid->lon ( trans('catchdoll.lon' ) );
 			$grid->address( trans('catchdoll.address') ) ;
 			$states = [ 
 					'on' => [ 
@@ -144,9 +145,14 @@ class CatchdollController extends Controller {
 		    $form->text('landmark' , trans('catchdoll.landmark') )->rules('required' , [
 		        'required' => trans('catchdoll.need_landmark')
             ]);
+		    $form->text('merchant' , '商家名称')->rules('required' , [
+                'required' => trans('catchdoll.need_merchant')
+            ]);
+		    /**
 			$form->text('no' , trans('catchdoll.no') )->rules('required' , [
 					'required' => trans('catchdoll.need_no')
 			]);
+             **/
 			$form->image ( 'cover', trans('catchdoll.cover') );
 			$form->bmap ( 'lat', 'lon', trans('catchdoll.map') )->rules ( 'required', [ 
 					'required' => trans('catchdoll.require_map') 
