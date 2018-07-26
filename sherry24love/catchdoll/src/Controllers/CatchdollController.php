@@ -148,11 +148,11 @@ class CatchdollController extends Controller {
 		    $form->text('merchant' , '商家名称')->rules('required' , [
                 'required' => trans('catchdoll.need_merchant')
             ]);
-		    /**
+
 			$form->text('no' , trans('catchdoll.no') )->rules('required' , [
 					'required' => trans('catchdoll.need_no')
 			]);
-             **/
+
 			$form->image ( 'cover', trans('catchdoll.cover') );
 			$form->bmap ( 'lat', 'lon', trans('catchdoll.map') )->rules ( 'required', [ 
 					'required' => trans('catchdoll.require_map') 
